@@ -1,0 +1,53 @@
+Xpath - XML path
+Absolute xpath - /
+Relative xpath - //
+
+Relative xpath
+Basics
+=> Attribute based xpath
+//tagname[@attribute='value']
+//label[@for = 'username']
+
+=> Partial Attribute based xpath
+//tagname[contains(@attribute,'partial attribute value')]
+//label[contains(@for,'user')]
+
+=> Text based xpath
+//tagname[text()='text value']
+//label[text()='Username']
+
+=> Partial Text based xpath
+//tagname[contains(text(),'partial text value')]
+//label[contains(text(),'User')]
+
+=> Collections xpath
+(xpath)[index] index - 1
+
+
+Relative xpath - Axes
+1. Parent - Child
+parent xpath/child tagname or child xpath
+//p[@class='top']/label
+2. Grandparent - Grandchild
+Grandparent xpath//Grandchild tagname or Grandchild xpath
+(//form[@id='login']//label)[2]
+3. Elder sibling - Younger sibling
+Elder sibling xpath/following-sibling::Younger sibling tagname or xpath
+//label[@for='username']/following-sibling::input
+4. Elder cousin - Younger cousin
+Elder cousin xpath/following::Younger cousin tagname or xpath
+//input[@id='username']/following::input[@id='password']
+
+5. Child - Parent
+Child xpath/parent:: parent tagname or Child xpath/..
+//input[@id='password']/parent::p
+//input[@id='password']/..
+6. Grandchild - Grandparent
+//Grandchild xpath/ancestor::Grandparent tagname or xpath
+//input[@id='password']/ancestor::form
+7. Younger sibling - Elder sibling
+// Younger sibling xpath/preceding-sibling:: Elder sibling tag name or xpath
+//input[@id='password']/preceding-sibling::label
+8. Younger cousin - Elder cousin
+// Younger cousin xpath/preceding:: Elder cousin tagname or xpath
+//input[@id='password']/preceding::label
